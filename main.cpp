@@ -1,1 +1,205 @@
+unsigned const int A = 13;
+unsigned const int B = 12;
+unsigned const int C = 11;
+unsigned const int D = 10;
+unsigned const int E = 9;
+unsigned const int F = 8;
+unsigned const int G = 7;
+unsigned const int H = 6;
+int ldrpin = A0;
+int ldrvalue;
+float volt;
+
+void setup(void)
+{
+  
+  pinMode(ldrpin, INPUT);
+  pinMode(A, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
+  pinMode(E, OUTPUT);
+  pinMode(F, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(H, OUTPUT);
+}
+
+//My Functions
+
+void zero(void) {
+  digitalWrite(A, LOW);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void one(void) {
+  digitalWrite(A, LOW);
+  digitalWrite(B, LOW);
+  digitalWrite(C, LOW);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, LOW);
+  digitalWrite(F, LOW);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void two(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, LOW);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, LOW);
+  digitalWrite(H, LOW);
+}
+
+void three(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, LOW);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, LOW);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void four(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, LOW);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, LOW);
+  digitalWrite(F, LOW);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void five(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, LOW);
+  digitalWrite(E, LOW);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void six(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, LOW);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void seven(void) {
+  digitalWrite(A, LOW);
+  digitalWrite(B, LOW);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, LOW);
+  digitalWrite(F, LOW);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void eight(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+void nine(void) {
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, LOW);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  digitalWrite(H, LOW);
+}
+
+  void show()
+  {
+    ldrvalue = analogRead(ldrpin);
+    
+    if (  ldrvalue < 6){
+    	zero();
+    }
+    
+    else if ( ldrvalue < 175){
+      	one();
+    }
+    
+    else if ( ldrvalue < 310){
+      	two();
+    }
+    
+    else if (ldrvalue < 415 ){
+      three();
+    }
+    
+    else if ( ldrvalue < 497 ){
+      four();
+    }
+    
+    else if ( ldrvalue  < 560){
+      five();
+    }
+    
+    else if ( ldrvalue < 620 ){
+      six();
+    }
+    
+    else if ( ldrvalue < 650){
+      seven();
+    }
+    
+    else if ( ldrvalue < 679){
+      eight();
+    }
+     
+    else{
+        nine();
+     }
+  }
+
+// Start
+void loop(void)
+{ 
+  show();
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
